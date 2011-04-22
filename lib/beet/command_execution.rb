@@ -46,5 +46,11 @@ module Beet
       sudo = options[:sudo] ? 'sudo ' : ''
       in_root { run("#{sudo}rake #{command} RAILS_ENV=#{env}", false) }
     end
+
+    # Installs the gems using the specified ruby if rvmrc recipe is included
+    def rvm(command)
+      command = "rvm #{@ruby_version} exec #{command}" unless @ruby_version.nil?
+      run(command)
+    end
   end
 end

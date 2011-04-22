@@ -19,7 +19,7 @@ module Beet
     include Beet::SCM
 
     attr_reader :root, :logger, :options, :template
-    attr_accessor :recipes, :project_name, :gems, :todo_items
+    attr_accessor :recipes, :project_name, :gems, :todo_items, :ruby_version
 
     def initialize(project_name, options={}) # :nodoc:
       @root = calculate_project_root(project_name)
