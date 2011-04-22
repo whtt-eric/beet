@@ -1,5 +1,15 @@
 module Beet
   module Interaction
+    # Print text to the console
+    #
+    # ==== Example
+    #
+    #   say("This is the default. You probably shouldn't change it.")
+    #
+    def say(string)
+      log '', string
+    end
+
     # Get a user's input
     #
     # ==== Example
@@ -8,7 +18,7 @@ module Beet
     #   freeze! if ask("Should I freeze the latest Rails?") == "yes"
     #
     def ask(string)
-      log '', string 
+      say(string)
       print '> '
       STDIN.gets.strip
     end
