@@ -1,6 +1,6 @@
 gem "mysql2"
 
-run "bundle install"
+rvm "bundle install"
 
 file 'config/database.yml' do
   %{
