@@ -29,7 +29,7 @@ module Beet
     # Executes a ruby script (taking into account WIN32 platform quirks)
     def run_ruby_script(command, log_action = true)
       ruby_command = RUBY_PLATFORM=~ /win32/ ? 'ruby ' : ''
-      run("#{ruby_command}#{command}", log_action)
+      rvm("#{ruby_command}#{command}", log_action)
     end
 
     # Runs the supplied rake task
@@ -48,9 +48,9 @@ module Beet
     end
 
     # Installs the gems using the specified ruby if rvmrc recipe is included
-    def rvm(command)
+    def rvm(command, log_action = true)
       command = "rvm #{@ruby_version} exec #{command}" unless @ruby_version.nil?
-      run(command)
+      run(command, log_action)
     end
   end
 end
