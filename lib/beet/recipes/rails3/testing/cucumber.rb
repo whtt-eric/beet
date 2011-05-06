@@ -1,13 +1,19 @@
-gem_group :cucumber do
-  gem 'capybara'
+gem_group [:development, :test] do
+  gem 'capybara', :version => '0.4.1.2'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber', :version => '0.7.3'
-  gem 'rspec-rails', :version => '~> 2.0.0.beta.19'
-  gem 'spork'
+  gem 'cucumber-rails', :version => '0.4.1'
   gem 'launchy'
+  gem 'email_spec', :version => '1.1.1'
 end
 
-run 'bundle install'
+rvm 'bundle install'
 
-generate 'cucumber:skeleton --rspec --capybara'
+generate 'cucumber:install --capybara'
+
+in_root do
+  add_after "features/support/env.rb", "require 'cucumber/rails'" do
+    %{require 'email_spec/cucumber}
+  end
+end
+
+generate 'email_spec:steps'
