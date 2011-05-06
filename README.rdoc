@@ -7,3 +7,7 @@ Please visit the homepage to learn more: http://jackdempsey.github.com/beet
 == Copyright
 
 Copyright (c) 2010 Jack Dempsey. See LICENSE for details.
+
+== Other Stuff
+
+Some additional recipes inspired by Miles Sterrett's {Rails 3 Template}[https://github.com/mileszs/rails3_template]
