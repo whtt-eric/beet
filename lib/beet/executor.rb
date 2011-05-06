@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'beet/logger'
 require 'yaml'
+require 'find'
 begin
   require 'ruby-debug'
 rescue LoadError
@@ -205,13 +206,23 @@ module Beet
     def recipe_location(recipe)
       return recipe if File.exists?(recipe) or recipe.include?('http://')
       locations = []
+      recipe_paths = []
       locations << File.expand_path(ENV['BEET_RECIPES_DIR']) if ENV['BEET_RECIPES_DIR']
       locations << File.expand_path(File.join(File.dirname(__FILE__), 'recipes'))
-      locations.each do |location|
-        filename = File.join(location, "#{recipe}.rb")
-        return filename if File.exists?(filename)
+
+      Find.find(locations * ", ") do |path|
+        recipe_paths << path if path.include?("#{recipe}.rb")
       end
-      nil
+
+      filename = if recipe_paths.length > 1
+        @project_type == :rails3 ?
+          recipe_paths.find {|path| path.include?("rails3")} :
+          recipe_paths.find {|path| path.include?("rails")}
+      else
+        recipe_paths.first
+      end
+
+      return filename
     end
 
     def search_for_rails_2
