@@ -4,11 +4,11 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{beet}
+  s.name = %q{whtt-eric-beet}
   s.version = "0.6.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jack Dempsey"]
+  s.authors = ["Jack Dempsey", "Eric Salczynski"]
   s.date = %q{2011-05-06}
   s.default_executable = %q{beet}
   s.email = %q{jack.dempsey@gmail.com}
@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
     "Rakefile",
     "TODO",
     "VERSION",
-    "beet.gemspec",
     "bin/beet",
     "features/generating.feature",
     "features/step_definitions/beet_steps.rb",
