@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "beet"
+    gem.name = "whtt-eric-beet"
     gem.summary = %Q{A gem to help with easily generating projects}
     gem.email = "jack.dempsey@gmail.com"
     gem.homepage = "http://github.com/jackdempsey/beet"
-    gem.authors = ["Jack Dempsey"]
+    gem.authors = ["Jack Dempsey", "Eric Salczynski"]
     gem.add_dependency "thor", "~> 0.14.0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
