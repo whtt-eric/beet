@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{whtt-eric-beet}
-  s.version = "0.6.10"
+  s.version = "0.6.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jack Dempsey", "Eric Salczynski"]
-  s.date = %q{2011-05-06}
+  s.date = %q{2011-05-10}
   s.default_executable = %q{beet}
   s.email = %q{jack.dempsey@gmail.com}
   s.executables = ["beet"]
@@ -69,7 +69,8 @@ Gem::Specification.new do |s|
     "lib/beet/recipes/rails3/admin_interface/rails_admin.rb",
     "lib/beet/recipes/rails3/auth/devise.rb",
     "lib/beet/recipes/rails3/clean_files.rb",
-    "lib/beet/recipes/rails3/css/boilerplate.rb",
+    "lib/beet/recipes/rails3/css/compass.rb",
+    "lib/beet/recipes/rails3/css/haml.rb",
     "lib/beet/recipes/rails3/css/reset.rb",
     "lib/beet/recipes/rails3/css/sass.rb",
     "lib/beet/recipes/rails3/db/mysql.rb",
