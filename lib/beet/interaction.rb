@@ -7,7 +7,7 @@ module Beet
     #   say("This is the default. You probably shouldn't change it.")
     #
     def say(string)
-      puts "\n#{string}"
+      puts "#{string}"
     end
 
     # Get a user's input
