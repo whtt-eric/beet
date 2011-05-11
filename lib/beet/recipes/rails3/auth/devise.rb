@@ -1,6 +1,8 @@
 # this is designed for rails 3
 gem 'devise', :version => '1.3.4'
 
+rvm "bundle install"
+
 generate "devise:install"
 
 model_name = ask "What would you like to call your Devise model? (e.g. User, Admin)"
